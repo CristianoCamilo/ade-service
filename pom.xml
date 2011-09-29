@@ -69,6 +69,13 @@
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Others dependencies -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 
 
@@ -107,6 +114,9 @@
 							<includes>
 								<include>ade-service.war</include>
 							</includes>
+						</fileset>
+						<fileset>
+							<directory>${deploy.dir}/ade-service</directory>
 						</fileset>
 					</filesets>
 				</configuration>
