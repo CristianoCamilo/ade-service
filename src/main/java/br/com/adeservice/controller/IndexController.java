@@ -23,6 +23,7 @@ public class IndexController {
 	@Get("/")
 	public void index(){
 		this.result.include("index", "ade-service");
+		//this.result.redirectTo(LoginController.class).login();
 	}
 	
 	

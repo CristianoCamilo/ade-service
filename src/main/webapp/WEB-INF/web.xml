@@ -8,6 +8,12 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!-- i18n configuration -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>messages</param-value>
+	</context-param> 
+
 	<!-- vraptor configuration -->
 	<filter>
 		<filter-name>vraptor</filter-name>
