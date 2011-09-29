@@ -15,6 +15,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<deploy.dir>/Users/fabio/Programas/apache-tomcat-7.0.19/webapps</deploy.dir>
 	</properties>
 
 	<dependencies>
@@ -93,6 +94,21 @@
 					<maxmem>1024m</maxmem>
 					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<outputDirectory>${deploy.dir}</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${deploy.dir}</directory>
+							<includes>
+								<include>ade-service.war</include>
+							</includes>
+						</fileset>
+					</filesets>
 				</configuration>
 			</plugin>
 			<plugin>
