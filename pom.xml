@@ -70,6 +70,33 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Mysql dependencies -->
+		<dependency>
+			<groupId>ade</groupId>
+			<artifactId>ADEAde</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>ade</groupId>
+			<artifactId>ADEConfig</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>ade</groupId>
+			<artifactId>ADEJDom</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>ade</groupId>
+			<artifactId>ADEMisc</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>ade</groupId>
+			<artifactId>ADEStubs</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 		<!-- Others dependencies -->
 		<dependency>
 			<groupId>jstl</groupId>
