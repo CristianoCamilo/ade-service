@@ -1,1 +1,33 @@
 Integration Service
+
+################### Configurations Ade-service ####################
+
+--Create two schemes to development project ade-service
+
+#development scheme
+scheme_name: adeservice
+username: root
+password:
+
+#test scheme
+scheme_name: adeservice_test
+username: root
+password:
+
+
+--How to add libs ADE_SERVER in local maven repository.
+Follow the commands below:
+
+mvn install:install-file -Dfile=/Users/fabio/desenv/libs/ADEAde.jar -DgroupId=ade -DartifactId=ADEAde -Dversion=1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=/Users/fabio/desenv/libs/ADEConfig.jar -DgroupId=ade -DartifactId=ADEConfig -Dversion=1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=/Users/fabio/desenv/libs/ADEJDom.jar -DgroupId=ade -DartifactId=ADEJDom -Dversion=1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=/Users/fabio/desenv/libs/ADEMisc.jar -DgroupId=ade -DartifactId=ADEMisc -Dversion=1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=/Users/fabio/desenv/libs/ADEStubs.jar -DgroupId=ade -DartifactId=ADEStubs -Dversion=1.0 -Dpackaging=jar
+
+
+
+
