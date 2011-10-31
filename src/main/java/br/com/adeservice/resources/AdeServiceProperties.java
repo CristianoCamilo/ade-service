@@ -1,8 +1,10 @@
 package br.com.adeservice.resources;
 
+import static java.lang.System.getProperty;
+import static org.apache.commons.lang.StringUtils.isNotEmpty;
+
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 /**
@@ -15,22 +17,23 @@ import org.apache.log4j.Logger;
 public class AdeServiceProperties {
 	
 	private static final String ADE_SERVER_IP = "ade.server.ip";
+	private static final String ADE_SERVER_PORT = "ade.server.port";
 
 	private static Logger log = Logger.getLogger(AdeServiceProperties.class);
 
 	private static final String SEPARATOR = "/";
 	private static final String CONFIG_FILENAME = "adeservice.properties";
 	private static final String CONFIG_PATH_VARIABLE = "config.adeservice";
-	private static final String DEFAULT_PATH = "resources";
 	
 	private static Configuration config;
 
 	static {
 		try {
-			String pathVariable = System.getProperty(CONFIG_PATH_VARIABLE);
-			String pathProperties = StringUtils.isNotEmpty(pathVariable) ? pathVariable : DEFAULT_PATH;
-			
-			config = new PropertiesConfiguration(pathProperties + SEPARATOR + CONFIG_FILENAME);	
+			String pathVariable = getProperty(CONFIG_PATH_VARIABLE);
+			String pathProperties = isNotEmpty(pathVariable) ? 
+									pathVariable + SEPARATOR + CONFIG_FILENAME :
+									CONFIG_FILENAME;
+			config = new PropertiesConfiguration(pathProperties);	
 		} catch (Exception ex) {
 			log.error(ex.getMessage(), ex);
 		}
@@ -38,6 +41,10 @@ public class AdeServiceProperties {
 	
 	public static String getAdeServerIp() {
 		return config.getString(ADE_SERVER_IP);
+	}
+	
+	public static Integer getAdeServerPort(){
+		return config.getInt(ADE_SERVER_PORT);
 	}
 	
 }
