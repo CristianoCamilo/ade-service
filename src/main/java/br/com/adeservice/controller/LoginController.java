@@ -23,18 +23,25 @@ public class LoginController {
 		this.result = result;
 	}
 	
+	
 	@Post("/login/validate")
 	public void validate(final LoggedUser loggedUser) {
-		System.out.println("validate");
-		System.out.println("usuario: " + loggedUser.getUsername());
-		System.out.println("senha: " + loggedUser.getPassword());
+//		System.out.println("validate");
+//		System.out.println("usuario: " + loggedUser.getUsername());
+//		System.out.println("senha: " + loggedUser.getPassword());
 		this.result.redirectTo(this).login();
 		
 	}
 	
 	@Get("/login")
 	public void login() {
-		System.out.println("login");
+//		String host = AdeServiceProperties.getAdeServerIp();
+//		System.out.println("host " + host);
+//		AdeApi ade = new AdeApi();
+//		ade.setServer(host);
+//		ade.setLogin("x1");
+//		ade.setPassword("123");
+//		System.out.println("login");
 	}
 
 	@Get("/logout")
