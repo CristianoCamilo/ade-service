@@ -7,6 +7,18 @@
 	<packaging>war</packaging>
 	<name>ade-service</name>
 
+	<developers>
+		<developer>
+			<id>fabiomasson</id>
+			<name>Fabio Cesar Masson</name>
+			<email>fabiomasson@gmail.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
 	<scm>
 		<url>https://github.com/CristianoCamilo/ade-service</url>
 		<connection>scm:git@github.com:CristianoCamilo/ade-service.git</connection>
@@ -19,6 +31,20 @@
 	</properties>
 
 	<dependencies>
+		<!-- MongoDB dependencies -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+		
+		<!-- Spring Mongo dependencies -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.0.0.M4</version>
+		</dependency>
+
 		<!-- Mysql dependencies -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -193,5 +219,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Maven MILESTONE Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+		</repository>
+	</repositories>
 
 </project>
