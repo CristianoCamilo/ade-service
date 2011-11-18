@@ -2,20 +2,12 @@ Integration Service
 
 ################### Configurations Ade-service ####################
 
---Create two schemes to development project ade-service
+--You must install mongodb to develop the project ade-service
+Follow the instructions on the link below :
 
-#development scheme
-scheme_name: adeservice
-username: root
-password:
+http://www.hacksparrow.com/how-to-install-mongodb-on-mac-os-x.html
 
-#test scheme
-scheme_name: adeservice_test
-username: root
-password:
-
-
---How to add libs ADE_SERVER in local maven repository.
+--How to add libs ADE_SERVER in local your maven repository.
 Follow the commands below:
 
 mvn install:install-file -Dfile=/Users/fabio/desenv/libs/ADEAde.jar -DgroupId=ade -DartifactId=ADEAde -Dversion=1.0 -Dpackaging=jar
