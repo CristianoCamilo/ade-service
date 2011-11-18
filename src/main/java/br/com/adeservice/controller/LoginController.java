@@ -18,30 +18,21 @@ import br.com.caelum.vraptor.Result;
 public class LoginController {
 
 	private Result result;
-
+	
 	public LoginController(final Result result) {
 		this.result = result;
 	}
-	
-	
+
 	@Post("/login/validate")
 	public void validate(final LoggedUser loggedUser) {
-//		System.out.println("validate");
-//		System.out.println("usuario: " + loggedUser.getUsername());
-//		System.out.println("senha: " + loggedUser.getPassword());
+		// TODO validar login
 		this.result.redirectTo(this).login();
 		
 	}
 	
 	@Get("/login")
 	public void login() {
-//		String host = AdeServiceProperties.getAdeServerIp();
-//		System.out.println("host " + host);
-//		AdeApi ade = new AdeApi();
-//		ade.setServer(host);
-//		ade.setLogin("x1");
-//		ade.setPassword("123");
-//		System.out.println("login");
+		// TODO realizar login 
 	}
 
 	@Get("/logout")

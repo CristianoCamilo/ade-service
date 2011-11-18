@@ -17,6 +17,7 @@ input, label {
 #border-top.h div div { background: url(../images/right.png) no-repeat; height: 40px; background-position: top right}
 
 #border {border: 1px solid; border-color: gainsboro; background-color: #E9F1F4;}
+#border div {margin-left: 10%;}
 
 .button {
     background: url(../images/button-gray.png) repeat-x top center;
