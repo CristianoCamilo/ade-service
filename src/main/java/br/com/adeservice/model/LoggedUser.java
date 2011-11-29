@@ -41,6 +41,7 @@ public class LoggedUser implements Serializable {
 			this.password = password;
 			this.isLogged = true;
 		} catch (Exception ex) {
+			this.isLogged = false;
 			log.error("Nao foi possivel efetuar o login... username: " + username);
 			log.error(ex.getMessage(), ex);
 		}
