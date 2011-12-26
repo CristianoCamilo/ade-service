@@ -9,7 +9,8 @@
 	http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<context:component-scan base-package="br.com.adeservice.dao" />
+	
+	<context:component-scan base-package="br.com.adeservice" />
 	<context:annotation-config />
 
 	<context:property-placeholder location="classpath:/mongo.properties" />
@@ -20,4 +21,6 @@
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 	</bean>
+	
+	<!-- <mongo:repositories base-package="br.com.adeservice.repository"/> -->
 </beans>
