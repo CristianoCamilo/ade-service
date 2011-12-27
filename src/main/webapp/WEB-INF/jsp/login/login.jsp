@@ -35,7 +35,7 @@
 						 <input type="password" name="password" size="40px"/>
 					</p>
 					<p>
-						<input type="submit" value='<fmt:message key="login.execute"/>'/>
+						<input type="submit" class="button" value='<fmt:message key="login.execute"/>'/>
 					</p>
 				</form>
 			</div>
