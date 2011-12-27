@@ -1,5 +1,7 @@
 package br.com.adeservice.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.index.Index;
@@ -31,6 +33,10 @@ public class LogDao implements LogRepository {
 	
 	public void save(final Log log){
 		mongoTemplate.save(log);
+	}
+	
+	public List<Log> getAll() {
+		return mongoTemplate.findAll(Log.class);
 	}
 	
 	

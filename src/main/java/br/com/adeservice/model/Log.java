@@ -1,8 +1,10 @@
 package br.com.adeservice.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,18 +14,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  */
 @Document
-public class Log implements Serializable {
+public class Log implements DbCollection {
 	
 	private static final long serialVersionUID = -5435776842445573781L;
 	
 	@Id
 	private String id;
 	private String project;
-	private String entityCode;
-	private String entityType;
+	private Long entityId;
+	private String entityName;
 	private Boolean isAnyError;
 	private String errorMessage;
-	private Date createDate;
+	private Date createdDate;
 	
 	public Log() {}
 
@@ -43,20 +45,20 @@ public class Log implements Serializable {
 		this.project = project;
 	}
 
-	public String getEntityCode() {
-		return entityCode;
+	public Long getEntityId() {
+		return entityId;
 	}
 
-	public void setEntityCode(final String entityCode) {
-		this.entityCode = entityCode;
+	public void setEntityId(final Long entityId) {
+		this.entityId = entityId;
 	}
 
-	public String getEntityType() {
-		return entityType;
+	public String getEntityName() {
+		return entityName;
 	}
 
-	public void setEntityType(final String entityType) {
-		this.entityType = entityType;
+	public void setEntityName(final String entityName) {
+		this.entityName = entityName;
 	}
 
 	public Boolean getIsAnyError() {
@@ -75,12 +77,28 @@ public class Log implements Serializable {
 		this.errorMessage = errorMessage;
 	}
 
-	public Date getCreateDate() {
-		return createDate;
+	public Date getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setCreateDate(final Date createDate) {
-		this.createDate = createDate;
+	public void setCreatedDate(final Date createDate) {
+		this.createdDate = createDate;
+	}
+	
+
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this);
+	}
+
+	@Override
+	public boolean equals(final Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj);
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 	
 }

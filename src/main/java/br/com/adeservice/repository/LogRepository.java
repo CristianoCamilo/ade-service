@@ -1,5 +1,7 @@
 package br.com.adeservice.repository;
 
+import java.util.List;
+
 import br.com.adeservice.model.Log;
 
 
@@ -11,5 +13,6 @@ import br.com.adeservice.model.Log;
 public interface LogRepository {
 	
 	void save(final Log log);
+	List<Log> getAll();
 
 }
