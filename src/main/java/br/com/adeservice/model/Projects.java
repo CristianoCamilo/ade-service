@@ -2,8 +2,6 @@ package br.com.adeservice.model;
 
 import java.util.List;
 
-import br.com.adeservice.infra.ade.AdeRootEntity;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 

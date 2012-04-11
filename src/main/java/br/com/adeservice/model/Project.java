@@ -1,7 +1,5 @@
 package br.com.adeservice.model;
 
-import br.com.adeservice.infra.ade.AdeEntity;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
