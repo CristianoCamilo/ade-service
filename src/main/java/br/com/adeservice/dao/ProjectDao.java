@@ -1,8 +1,8 @@
 package br.com.adeservice.dao;
 
-import com.adesoft.beans.AdeApi;
-
 import br.com.adeservice.model.Project;
+
+import com.adesoft.beans.AdeApi;
 
 /**
  * Apr 2, 2012

@@ -1,7 +1,7 @@
 package br.com.adeservice.dao;
 
-import br.com.adeservice.infra.ade.AdeEntity;
 import br.com.adeservice.infra.exception.DaoException;
+import br.com.adeservice.model.AdeEntity;
 import br.com.adeservice.model.Project;
 import br.com.adeservice.model.Projects;
 import br.com.adeservice.util.XmlParserUtil;
