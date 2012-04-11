@@ -5,7 +5,7 @@ import static org.jdom.output.Format.getPrettyFormat;
 import org.jdom.Element;
 import org.jdom.output.XMLOutputter;
 
-import br.com.adeservice.infra.ade.AdeRootEntity;
+import br.com.adeservice.model.AdeRootEntity;
 
 import com.thoughtworks.xstream.XStream;
 
