@@ -7,6 +7,9 @@ import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
+import br.com.caelum.vraptor.ioc.ApplicationScoped;
+import br.com.caelum.vraptor.ioc.Component;
+
 /**
  * Configurations properties ade-service.
  * 
@@ -14,20 +17,22 @@ import org.apache.log4j.Logger;
  * @author fabio
  *
  */
+@ApplicationScoped
+@Component
 public class AdeServiceProperties {
 	
 	private static final String ADE_SERVER_IP = "ade.server.ip";
 	private static final String ADE_SERVER_PORT = "ade.server.port";
 
-	private static Logger log = Logger.getLogger(AdeServiceProperties.class);
+	private Logger log = Logger.getLogger(AdeServiceProperties.class);
 
 	private static final String SEPARATOR = "/";
 	private static final String CONFIG_FILENAME = "adeservice.properties";
 	private static final String CONFIG_PATH_VARIABLE = "config.adeservice";
 	
-	private static Configuration config;
-
-	static {
+	private Configuration config;
+	
+	public AdeServiceProperties() {
 		try {
 			String pathVariable = getProperty(CONFIG_PATH_VARIABLE);
 			String pathProperties = isNotEmpty(pathVariable) ? 
@@ -39,11 +44,11 @@ public class AdeServiceProperties {
 		}
 	}
 	
-	public static String getAdeServerIp() {
+	public String getAdeServerIp() {
 		return config.getString(ADE_SERVER_IP);
 	}
 	
-	public static Integer getAdeServerPort(){
+	public Integer getAdeServerPort(){
 		return config.getInt(ADE_SERVER_PORT);
 	}
 	

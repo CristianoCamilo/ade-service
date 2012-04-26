@@ -1,10 +1,8 @@
 package br.com.adeservice.infra.ade;
 
-import static br.com.adeservice.resources.AdeServiceProperties.getAdeServerIp;
-import static br.com.adeservice.resources.AdeServiceProperties.getAdeServerPort;
-
 import javax.annotation.PostConstruct;
 
+import br.com.adeservice.resources.AdeServiceProperties;
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.caelum.vraptor.ioc.ComponentFactory;
 import br.com.caelum.vraptor.ioc.RequestScoped;
@@ -22,7 +20,12 @@ import com.adesoft.beans.AdeApi;
 public class AdeApiCreator implements ComponentFactory<AdeApi>{
 
 	private AdeApi adeApi;
+	private AdeServiceProperties properties;
 	
+	public AdeApiCreator(final AdeServiceProperties properties) {
+		this.properties = properties;
+	}
+
 	public AdeApi getInstance() {
 		return this.adeApi;
 	}
@@ -30,8 +33,7 @@ public class AdeApiCreator implements ComponentFactory<AdeApi>{
 	@PostConstruct
 	public void create(){
 		this.adeApi = new AdeApi();
-		this.adeApi.setServer(getAdeServerIp());
-		this.adeApi.setServerPort(getAdeServerPort());
+		this.adeApi.setServer(properties.getAdeServerIp());
+		this.adeApi.setServerPort(properties.getAdeServerPort());
 	}
-	
 }
