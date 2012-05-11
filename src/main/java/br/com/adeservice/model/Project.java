@@ -1,7 +1,10 @@
 package br.com.adeservice.model;
 
+import br.com.adeservice.dao.ActiveRecord;
+import br.com.adeservice.dao.ProjectDao;
+import br.com.adeservice.repository.ProjectRepository;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 /**
  * Apr 2, 2012
@@ -9,32 +12,33 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
  *
  */
 @XStreamAlias("project")
-public class Project implements AdeEntity {
+public class Project extends ActiveRecord<ProjectRepository, ProjectDao> implements AdeEntity {
 	
 	private static final long serialVersionUID = -3127897483761691510L;
 	
-	@XStreamAsAttribute
-	private Long id;
-	
-	@XStreamAsAttribute
+	private Integer id;
 	private String name;
 	
 	public Project() {}
 	
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(final Long id) {
+	public Project(final Integer id, final String name) {
 		this.id = id;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(final String name) {
 		this.name = name;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}	
 	
+	public Project load(){
+		return getRepository().load(this);
+	}
+	
+	public String getCategory() {
+		return null;
+	}
 }

@@ -24,15 +24,15 @@ public class AdeServiceProperties {
 	private static final String ADE_SERVER_IP = "ade.server.ip";
 	private static final String ADE_SERVER_PORT = "ade.server.port";
 
-	private Logger log = Logger.getLogger(AdeServiceProperties.class);
+	private static Logger log = Logger.getLogger(AdeServiceProperties.class);
 
 	private static final String SEPARATOR = "/";
 	private static final String CONFIG_FILENAME = "adeservice.properties";
 	private static final String CONFIG_PATH_VARIABLE = "config.adeservice";
 	
-	private Configuration config;
+	private static Configuration config;
 	
-	public AdeServiceProperties() {
+	static {
 		try {
 			String pathVariable = getProperty(CONFIG_PATH_VARIABLE);
 			String pathProperties = isNotEmpty(pathVariable) ? 
@@ -44,11 +44,11 @@ public class AdeServiceProperties {
 		}
 	}
 	
-	public String getAdeServerIp() {
+	public static String getAdeServerIp() {
 		return config.getString(ADE_SERVER_IP);
 	}
 	
-	public Integer getAdeServerPort(){
+	public static Integer getAdeServerPort(){
 		return config.getInt(ADE_SERVER_PORT);
 	}
 	

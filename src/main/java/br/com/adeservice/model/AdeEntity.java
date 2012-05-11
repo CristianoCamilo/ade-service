@@ -9,6 +9,6 @@ import java.io.Serializable;
  */
 public interface AdeEntity extends Serializable {
 	
-	Long getId();
-	
+	Integer getId();
+	String getCategory();
 }

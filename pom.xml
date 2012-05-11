@@ -31,7 +31,7 @@
 	</properties>
 
 	<dependencies>
-		
+
 		<!-- MongoDB dependencies -->
 		<dependency>
 			<groupId>org.mongodb</groupId>
@@ -69,7 +69,7 @@
 		<dependency>
 			<groupId>br.com.caelum</groupId>
 			<artifactId>vraptor</artifactId>
-			<version>3.4.1</version>
+			<version>3.4.0</version>
 		</dependency>
 
 		<!-- Test dependencies -->
@@ -108,11 +108,6 @@
 		</dependency>
 
 		<!-- Ade dependencies -->
-		<dependency>
-			<groupId>jdom</groupId>
-			<artifactId>jdom</artifactId>
-			<version>1.1</version>
-		</dependency>
 		<dependency>
 			<groupId>ade</groupId>
 			<artifactId>ADEAde</artifactId>

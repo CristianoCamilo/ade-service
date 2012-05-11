@@ -1,41 +1,37 @@
 package br.com.adeservice.dao;
 
-import br.com.adeservice.infra.exception.DaoException;
-import br.com.adeservice.model.AdeEntity;
-import br.com.adeservice.model.Project;
-import br.com.adeservice.model.Projects;
-import br.com.adeservice.util.XmlParserUtil;
-
 import com.adesoft.beans.AdeApi;
+import com.adesoft.beans.filters.FiltersResources;
+import com.adesoft.beans.settings.ResourceSettings;
 
 /**
- * Apr 2, 2012
+ * May 5, 2012
  * @author fabio
  *
  */
-public abstract class AbstractBaseDao<T extends AdeEntity> {
-	
-	private static final Integer PROJECT_ID_AND_NAME = 2;
+public abstract class AbstractBaseDao {
 	
 	private AdeApi api;
-
-	public AbstractBaseDao(final AdeApi api) {
+	private ResourceSettings resource;
+	private FiltersResources filters;
+	
+	public AbstractBaseDao(final AdeApi api, final ResourceSettings resource,
+			final FiltersResources filters) {
 		this.api = api;
-	}	
-
-	private Long getProjectId(final String name) {
-		Long projectId = null;
-		try {
-			Projects projects = XmlParserUtil.toEntity(api.getProjects(PROJECT_ID_AND_NAME), Projects.class);
-			for (Project project : projects.getProjects()) {
-				if(project.getName().equalsIgnoreCase((name))){
-					projectId = project.getId();
-					break;
-				}
-			}
-		} catch (Exception ex) {
-			throw new DaoException(ex);
-		}
-		return projectId;
+		this.resource = resource;
+		this.filters = filters;
 	}
+
+	public AdeApi getApi() {
+		return api;
+	}
+
+	public ResourceSettings getResource() {
+		return resource;
+	}
+
+	public FiltersResources getFilters() {
+		return filters;
+	}
+
 }
